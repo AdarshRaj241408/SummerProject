@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fabf2941e8.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="header">
+        <div class="header-first">
+            <i class="fa-solid fa-bars fa-lg" style="color: #74c0fc;"></i>
+        </div>
+        <div class="header-middle">
+            <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #74c0fc;"></i>
+            <input type="text" placeholder="Search Mail">
+            <i class="fa-solid fa-sliders fa-lg" style="color: #74c0fc;"></i>
+        </div>
+        <div class="header-last">
+            <i class="icons fa-solid fa-circle-question fa-lg" style="color: #74c0fc;"></i>
+            <i class="icons fa-solid fa-gear fa-lg" style="color: #74c0fc;"></i>
+            <i class="icons fa-solid fa-user fa-lg" style="color: #74c0fc;"></i>
+        </div>
+    </div>
+    <!-- box -->
+    <div class="main-body">
+        <!-- side bar -->
+        <div class="sidebar">
+            <button class="sidebar_compose" onclick="showComposeBox()">
+                <i class="fa-solid fa-pencil" style="color: #74c0fc;"></i>
+                Compose
+            </button>
+            <div class="sidebar_option sidebarOption_active">
+                <i class="fa-solid fa-envelope" style="color: #74c0fc;"></i>
+                <h3>Inbox</h3>
+            </div>
+
+            <div class="sidebar_option">
+                <i class="fa-solid fa-star" style="color: #74c0fc;"></i>
+                <h3>Starred</h3>
+            </div>
+
+            <div class="sidebar_option">
+                <i class="fa-regular fa-clock" style="color: #74c0fc;"></i>
+                <h3>Snoozed</h3>
+            </div>
+
+            <div class="sidebar_option">
+                <i class="fa-regular fa-paper-plane" style="color: #74c0fc;"></i>
+                <h3>Sent</h3>
+            </div>
+
+            <div class="sidebar_option">
+                <i class="fa-regular fa-note-sticky" style="color: #74c0fc;"></i>
+                <h3>Drafts</h3>
+            </div>
+
+            <div class="sidebar_option">
+                <i class="fa-solid fa-chevron-down" style="color: #74c0fc;"></i>
+                <h3>More</h3>
+            </div>
+            <div class="sidebar_footer">
+
+            </div>
+        </div>
+        <!-- side bar done -->
+        <!-- big boxx!!! -->
+        <div class="box">
+            <div class="emailList">
+                <!-- input compose box -->
+                <div class="compose_box">
+                    <div class="compose_box_title">
+                        <h4>New Message</h4>
+                        <button class="cross_button" onclick="hideComposeBox()"></button>
+                    </div>
+                    <div class="compose_box_toInput">
+                        <h3>To:</h3>
+                        <input type="text" class="toInput">
+                    </div>
+                    <div class="compose_box_subjectInput">
+                        <h3>Subject</h3>
+                        <input type="text" class="subjectInput">
+                    </div>
+                    <div class="compose_box_bodyInput">
+                        <textarea></textarea>
+                    </div>
+                    <div class="compose_box_footer">
+                        <i class="fa-solid fa-paperclip" style="color: #74c0fc;"></i>
+                        <i class="fa-regular fa-image" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-underline" style="color: #74c0fc;"></i>
+                        <i class="fa-regular fa-face-smile" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-pen-clip" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #74c0fc;"></i>
+                        <button>Submit</button>
+                    </div>
+                </div>
+                <!-- specifications -->
+                <div class="emailList_specs">
+                    <div class="emailList_specsLeft">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-caret-down" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-rotate-right" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #74c0fc;"></i>
+                    </div>
+                    <div class="emailList_specsRight" style="color: #74c0fc;">
+                        <i class="fa-solid fa-chevron-left" style="color: #74c0fc;"></i>
+                        <i class="fa-solid fa-chevron-right" style="color: #74c0fc;"></i>
+                    </div>
+                </div>
+                <!--container-->
+                <div class="emailList_sections">
+                    <div class="section section_selected">
+                        <i class="fa-solid fa-inbox" style="color: #74c0fc;"></i>
+                        <h4>Primary</h4>
+                    </div>
+    
+                    <div class="section">
+                        <i class="fa-solid fa-tag" style="color: #74c0fc;"></i>
+                        <h4>Promotions</h4>
+                    </div>
+    
+                    <div class="section">
+                        <i class="fa-solid fa-user-group" style="color: #74c0fc;"></i>
+                        <h4>Social</h4>
+                    </div>
+                </div>
+                <!-- email messagesssss -->
+                <div class="emailList_list">
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options" >
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>You got a new message.</h4>
+                        </div>
+                        <p class="emailRow_time">11  pm</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>You got a new message.Check it out fast, and don't miss out on the fun!</h4>
+                        </div>
+                        <p class="emailRow_time">10 pm</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Dribble</h3>
+                        <div class="emailRow_message">
+                            <h4>Beyond Imagination:Unveiling the New Era of art-Infused Video</h4>
+                        </div>
+                        <p class="emailRow_time">6   pm</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Discord</h3>
+                        <div class="emailRow_message">
+                            <h4>Updates to Discord's Policies</h4>
+                        </div>
+                        <p class="emailRow_time">2 am</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Spotify</h3>
+                        <div class="emailRow_message">
+                            <h4>Playlists made just for you.</h4>
+                        </div>
+                        <p class="emailRow_time">14 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Codeforces</h3>
+                        <div class="emailRow_message">
+                            <h4>Codeforces Round 937 (Div. 4)</h4>
+                        </div>
+                        <p class="emailRow_time">14 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Figma</h3>
+                        <div class="emailRow_message">
+                            <h4>Speakers announced for Config 2024!</h4>
+                        </div>
+                        <p class="emailRow_time">14 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Spotify</h3>
+                        <div class="emailRow_message">
+                            <h4>An artist you like is on Varsity Bars.</h4>
+                        </div>
+                        <p class="emailRow_time">14 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">The Google Account</h3>
+                        <div class="emailRow_message">
+                            <h4>Niki, review your Google Account settings</h4>
+                        </div>
+                        <p class="emailRow_time">14 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>You got a new message.You are yoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoy</h4>
+                        </div>
+                        <p class="emailRow_time">13 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Linkedln</h3>
+                        <div class="emailRow_message">
+                            <h4>You have a New Follower!</h4>
+                        </div>
+                        <p class="emailRow_time">13 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>A New User just liked your post! Getin on the action!</h4>
+                        </div>
+                        <p class="emailRow_time">13 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>You got a new follower!Check out who it is!</h4>
+                        </div>
+                        <p class="emailRow_time">13 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Figma</h3>
+                        <div class="emailRow_message">
+                            <h4>Speakers announced for Config 2024!</h4>
+                        </div>
+                        <p class="emailRow_time">13 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Spotify</h3>
+                        <div class="emailRow_message">
+                            <h4>An artist you like is on Varsity Bars.</h4>
+                        </div>
+                        <p class="emailRow_time">12 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">The Google Account</h3>
+                        <div class="emailRow_message">
+                            <h4>Niki, review your Google Account settings</h4>
+                        </div>
+                        <p class="emailRow_time">12 August</p>
+                    </div>
+                </div>
+                <div class="emailRow" onclick="transfer()">
+                    <div class="emailRow_options">
+                        <input type="checkbox">
+                        <i class="fa-regular fa-star" style="color: #74c0fc;"></i>
+                        <h3 class="emailRow_title">Quora</h3>
+                        <div class="emailRow_message">
+                            <h4>You got a new message.You are yoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoyoy</h4>
+                        </div>
+                        <p class="emailRow_time">12 August</p>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="summer.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@property --gradient-angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes rotation{
+    0% {--gradient-angle: 0deg;}
+    100% {--gradient-angle: 360deg;}
+}
+:root{
+    --clr-1: #350DA8;
+    --clr-2: #5214B8;
+    --clr-3: #0e4b50;
+    --clr-4: #58FFE5;
+    --clr-5: #9F07FF;
+    --clr-6: #041B2D;
+    --clr-7: #ffeb3b;
+    --clr-8: #ff00e0;
+}
+body{
+    background-image: url(background2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
+    display: grid;
+    min-height: 98vh;
+    place-content: center;
+    /* background-color: blue; */
+}
+.box{
+    width: 800px;
+    height:600px;
+    background-image:url(background2.jpeg);
+    border-radius: 0.5rem;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+.box::before,
+.box::after {
+    content: "";
+    position: absolute;
+    inset: -.2rem;
+    z-index: -1;
+    /* z-index: -1; */
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--clr-3),
+        var(--clr-4),
+        var(--clr-5),
+        var(--clr-6),
+        var(--clr-4),
+        var(--clr-3));
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+}
+.box::after{
+    filter: blur(3.5rem);
+}
+.box h1{
+    color:#74c0fc;
+    font-style: italic;
+    font-size: 40px;
+    font-weight: 200;
+}
